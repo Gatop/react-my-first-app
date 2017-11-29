@@ -7,31 +7,26 @@ import Input from './components/Input';
 
 /* Componente principal */
 class App extends Component {
-    /* Metodo will mount */
-    componentWillMount(){
-        console.log("Hola estoy ejecutando el metodo will mount");
+    constructor(){
+        super();
+
+        this.state = {
+            inputType: 'text'
+        };
+
+        this.onClickChild = this.onClickChild.bind(this);
     }
 
-    /* Metodo did mount */
-    componentDidMount(){
-        console.log("Hola estoy ejecutando el metodo did mount");
-    }
-
-    /* Metodo will unmount */
-    componentWillUnmount(){
-        console.log("Hola estoy ejecutando el metodo will unmount");
-    }
-
-    /* Metodo will unmount */
-    componentWillReceiveProps(){
-        console.log("Hola estoy ejecutando el metodo will Recieve Props");
+    // Metodo pasado para el hijo
+    onClickChild(e) {
+        this.setState({ inputType: 'number' });
     }
 
     // Render
     render() {
         return (<div>
-            <Image id={1} src=""/>
-            <Input id={1} type="text"/>
+            <Image id={1} src="" onClickChild={this.onClickChild}/>
+            <Input id={2} type={this.state.inputType}/>
         </div>);
     }
 }

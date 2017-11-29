@@ -3,8 +3,14 @@ import PropTypes from 'prop-types';
 
 // Componente Image
 class Image extends Component {
+    constructor(){
+        super();
+        this.onClick = this.onClick.bind(this);
+    }
+
+    // Metodo que accede al metodo del parent
     onClick(e){
-        alert(0);
+        this.props.onClickChild();
     }
 
     render() {
@@ -19,7 +25,8 @@ class Image extends Component {
 // Propiedades del componente
 Image.propTypes = {
     id: PropTypes.number.isRequired,
-    src: PropTypes.string.isRequired
+    src: PropTypes.string.isRequired,
+    onClickChild: PropTypes.func.isRequired
 };
 
 // Export del componente
