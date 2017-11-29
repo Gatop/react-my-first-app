@@ -1,29 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 
+/* Componentes hijos */
+import Image from './components/Image';
+import Input from './components/Input';
+
+/*Componente principal*/
 class App extends Component {
-  // Constructor
-  constructor() {
-    super();
-    this.state = {
-      text: "Hola Mundo",
-      text2: "Estoy aprendiendo react.js"
-    };
-
-    this.onClickTitle = this.onClickTitle.bind(this);
-  }
-
-  //
-  onClickTitle(e){
-    this.setState({ text2:"Ups, el estado ha sido actualizado" });
-  }
-
-  // Metodo Render
+  // Render
   render() {
     return(
       <div>
-        <h2 onClick={this.onClickTitle}> { this.state.text } </h2>
-        <h4> { this.state.text2 } </h4>
+        <Image id={1} src="https://www.feelcats.com/blog/wp-content/uploads/2015/11/maine-coon-gato.jpg"/>
+        <Input id={1} type="text"/>
       </div>
     );
   }
