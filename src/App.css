@@ -6,3 +6,13 @@
     font-family: sans-serif;
     font-size: 2em;
 }
+
+.App-legend {
+    display: flex;
+    font-size: 3em;
+}
+
+.App-block {
+    display: block;
+    margin: 10px;
+}
