@@ -8,13 +8,18 @@ import Children from './components/Children';
 class App extends Component {
     constructor() {
         super();
-
+        this.state ={
+            inputChildvalue: '10'
+        }
         this.comunicaHijo = this.comunicaHijo.bind(this);
     }
 
     // Action para comunicar el hijo
     comunicaHijo(e) {
-        this.refs.children.escribeHola();
+        //this.refs.children.escribeHola();
+        this.setState({
+            inputChildvalue: '20'
+        });
     }
 
     // Render
@@ -22,7 +27,9 @@ class App extends Component {
         return (
             <div>
                 <button onClick={this.comunicaHijo}>Comunica al hijo</button>
-                <Children inputValue="hey hey" ref="children" />
+                <Children
+                    ref="children"
+                    inputValue={this.state.inputChildvalue}/>
             </div>
         );
     }
