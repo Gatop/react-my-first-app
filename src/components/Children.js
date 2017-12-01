@@ -31,13 +31,15 @@ class Children extends Component {
                     value={ this.state.inputValue }
                     placeholder="input children"
                     onChange={(e) => this.setState({ inputValue: e.target.value })}/>
+                <button onClick={(e) => { this.props.muestraAlerta(100) }}>Button Hijo</button>
             </div>
         );
     }
 }
 
 Children.propTypes = {
-    inputValue: PropTypes.string
+    inputValue: PropTypes.string,
+    muestraAlerta: PropTypes.func
 }
 
 export default Children;

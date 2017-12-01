@@ -22,6 +22,11 @@ class App extends Component {
         });
     }
 
+    // Action que se llama desde el hijo
+    muestraAlerta(number) {
+        alert(number);
+    }
+
     // Render
     render() {
         return (
@@ -29,7 +34,8 @@ class App extends Component {
                 <button onClick={this.comunicaHijo}>Comunica al hijo</button>
                 <Children
                     ref="children"
-                    inputValue={this.state.inputChildvalue}/>
+                    inputValue={this.state.inputChildvalue}
+                    muestraAlerta={this.muestraAlerta}/>
             </div>
         );
     }
